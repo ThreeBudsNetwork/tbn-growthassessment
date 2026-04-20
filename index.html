@@ -335,6 +335,12 @@
     font-size: 13px;
     color: #777;
   }
+  .btn-guava {
+    background: #E47079;
+    color: #F6F1EB;
+    border: none;
+  }
+  .btn-guava:hover { background: #c9545d; transform: translateY(-1px); }
 </style>
 </head>
 <body>
@@ -350,7 +356,7 @@
 <!-- ============ SCREEN 2: CONTACT CAPTURE ============ -->
 <div class="screen" id="screen-contact">
   <h2>First, who are we scoring?</h2>
-  <p style="color:#555; margin-bottom: 28px;">We'll send your results to your inbox so you can come back to them anytime.</p>
+  <p style="color:#555; margin-bottom: 28px;">Complete the assessment to get your personalized score and recommendations.</p>
   <form id="contact-form" onsubmit="submitContact(event)">
     <div class="field-row">
       <div class="field">
@@ -365,7 +371,7 @@
     <div class="field">
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
-      <div class="helper">We'll email your score and never spam you.</div>
+      <div class="helper">You'll use this to receive updates from Three Buds Network.</div>
     </div>
     <div class="field">
       <label for="businessName">Business <span style="font-weight:400; color:#999;">(optional)</span></label>
@@ -501,19 +507,19 @@ const QUESTIONS = [
 const PILLAR_META = {
   establish: {
     label: "Establish",
-    icon: "🌱",
+    icon: "",
     tagline: "Systems & Foundations",
     intro: "These questions look at the foundation your business is built on — the systems, processes, and organization that make it possible to grow without chaos. Strong answers here mean you've built something repeatable. Gaps here mean you're probably rebuilding the same things over and over."
   },
   expand: {
     label: "Expand",
-    icon: "📈",
+    icon: "",
     tagline: "Growth & Strategy",
     intro: "These questions look at how intentionally you're approaching growth — whether you're scaling with a plan, tracking what matters, and pricing in a way that reflects your value. Strong answers here mean growth feels deliberate. Gaps here mean growth might be happening to you instead of for you."
   },
   enrich: {
     label: "Enrich",
-    icon: "🌺",
+    icon: "",
     tagline: "Business Feel & Intentionality",
     intro: "These questions look at how your business actually feels to run — your energy, your values alignment, the long-term sustainability of what you've built. Strong answers here mean the business is working for you, not against you. Gaps here mean something about how you're operating needs to change before it catches up with you."
   }
@@ -868,7 +874,7 @@ function showResults() {
     </div>
 
     <div class="priority-banner">
-      <div class="label">🎯 START HERE</div>
+      <div class="label">START HERE</div>
       <h3>${PILLAR_META[priorityPillar].label} is your highest-leverage focus.</h3>
       <p style="margin-bottom:0;">This is the area where the right support will create the most momentum right now. Your detailed results and recommendations are below — starting with this one.</p>
     </div>
@@ -913,7 +919,7 @@ function showResults() {
 
   html += `
     <div style="text-align:center; margin-top: 24px;">
-      <button id="btn-download" class="btn btn-secondary" onclick="downloadResults()">⬇ Download My Results</button>
+      <button id="btn-download" class="btn btn-guava" onclick="downloadResults()">Download My Results</button>
     </div>
   `;
 
